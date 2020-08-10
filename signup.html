@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+font-family: Arial, Helvetica, sans-serif;
+text-align:center;
+margin:0;
+}
+
+form 
+{
+border: 3px solid white;
+width:50%;
+display:inline-block;
+}
+
+label{
+display:inline-block;
+width:200px;
+margin-right:30px;
+text-align:right;
+}
+
+header
+{
+padding:5px;
+text-align:center;
+background-color:#2B60DE;
+color:white;
+width:100%;
+}
+
+input[type=text], input[type=password] {
+  width: 40%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 20%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+
+.text {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  width:10%;
+}
+
+.container {
+  padding: 10px;
+}
+
+}
+</style>
+</head>
+<body bgcolor="red">
+
+<header>
+<h2>STUDENT ADMISSION  SIGNUP</h2>
+</header>
+<br><br><br><br><br>
+<form action="signup.jsp" autocomplete="off" onsubmit="return check()">
+
+
+  <div class="container">
+    <label for="uname"><b>USERNAME</b></label>
+    <input type="text" placeholder="Enter Username" name="uname" required><br>
+
+    <label for="psw"><b>PASSWORD</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" id="myInput" required><br>
+     
+    <label for="npsw"><b>CONFIRM PASSWORD</b></label>
+    <input type="password" placeholder="Enter Password" name="npsw" id="myInput1" required><br><br>
+        
+	      <label>
+      <input type="checkbox" onclick="password()" > Show Password
+    </label>
+	<br><br>
+    <input type="submit" value="SUBMIT" class="button">
+
+
+
+  </div>
+</form>
+<script>
+function password() {
+  var x = document.getElementById("myInput");
+  var y = document.getElementById("myInput1");
+  if (x.type === "password"||y.type === "password") {
+    x.type = "text";
+	y.type = "text";
+  } else {
+    x.type = "password";
+	y.type = "password";
+  }
+}
+</script>
+
+<script>
+function check()
+{
+var a=document.getElementById("myInput").value;
+var b=document.getElementById("myInput1").value;
+if(a!=b)
+{
+alert("Passwords do not match");
+return false;
+}
+else if(a.length<8)
+{
+alert("Password must be atleast 8 characters long");
+return false;
+}
+return true;
+}
+</script>
+
+</body>
+</html>

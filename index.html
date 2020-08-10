@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+body {
+font-family: Arial, Helvetica, sans-serif;
+}
+
+.image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120px;
+    height: 120px;
+    margin:-60px 0 0 -60px;
+	border-radius:60%;
+    -webkit-animation:spin 4s linear infinite;
+    -moz-animation:spin 4s linear infinite;
+    animation:spin 4s linear infinite;
+}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+
+
+
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 } 
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom { 
+  from{ bottom:-100px; opacity:0 } 
+  to{ bottom:0; opacity:1 }
+}
+
+#myDiv {
+  display: none;
+  text-align: center;
+}
+
+header
+{
+padding:5px;
+text-align:center;
+background-color:#2B60DE;
+color:white;
+width:100%;
+}
+
+form {
+border: 3px solid white;
+width:50%;
+display:inline-block;
+}
+
+input[type=text], input[type=password] {
+  width: 40%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 20%;
+}
+
+.button:hover {
+  opacity: 0.8;
+  color:red;
+}
+
+.container {
+  padding: 10px;
+}
+
+span.psw {
+  float: center;
+  padding-top: 16px;
+}
+
+a {
+text-decoration:none;
+}
+
+a:visited {
+background-color:red;
+}
+
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+
+}
+</style>
+</head>
+<body bgcolor="red">
+
+
+
+
+<header>
+<h2>ADMISSION PORTAL LOGIN</h2>
+</header>
+<br><br><br><br><br>
+
+<form action="login.jsp" autocomplete="off" method="GET">
+  
+  <div class="container">
+    <label for="uname"><b>USERNAME  </b></label>
+    <input type="text" placeholder="Enter Username" name="uname" required><br>
+
+    <label for="psw"><b>PASSWORD  </b></label>
+    <input type="password" placeholder="Enter Password" name="psw" id="myInput" required><br><br>
+        
+    
+    <label>
+      <input type="checkbox" onclick="password()" > Show Password<br><br>
+    </label>
+	  <input type="submit" value="Login" class="button">
+  </div>
+
+  <div class="container" style="background-color:yellow">
+    <span class="psw"><a href="signup.html">No account already? Sign up</a></span>
+  </div>
+</form>
+
+</div>
+
+<script>
+var myVar;
+
+
+
+function password() {
+  var x = document.getElementById("myInput");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+</script>
+
+</body>
+</html>
